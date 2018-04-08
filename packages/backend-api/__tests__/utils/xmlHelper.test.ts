@@ -10,7 +10,6 @@ test('test parse xml', async () => {
 test('test stringify object to xml', () => {
   let obj = ['xxx', 'good'];
   let result = xmlHelper.stringify(obj);
-  console.log(result);
   expect(typeof result).toBe('string');
   expect(result).toBe(`<xml>
   <0>x</0>

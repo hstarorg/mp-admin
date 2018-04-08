@@ -26,8 +26,8 @@ gulp.task('clean.routes', done => {
 });
 
 gulp.task('compile', () => {
-  return tsProject
-    .src()
+  return gulp
+    .src('src/**/*.ts')
     .pipe(tsProject())
     .js.pipe(gulp.dest(distFolder));
 });
