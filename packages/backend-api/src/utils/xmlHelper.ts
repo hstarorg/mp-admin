@@ -17,7 +17,7 @@ const defaultParseOptions = {
  * @param [options] 转换参数
  * @param [callback] 回调函数
  */
-const parseAsync = (xml, options, callback) => {
+const parseAsync = (xml, options?, callback?) => {
   if (options && typeof options === 'function') {
     callback = options;
     options = null;
@@ -39,7 +39,7 @@ const parseAsync = (xml, options, callback) => {
  * @param obj 要转换的对象
  * @param [options] 转换时的参数对象
  */
-const stringify = (obj, options) => {
+const stringify = (obj, options?) => {
   let builder;
   if (options && typeof options === 'object') {
     builder = new xml2js.Builder(options);

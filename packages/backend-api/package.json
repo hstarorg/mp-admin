@@ -7,7 +7,7 @@
     "start": "npm run dev",
     "dev": "gulp dev",
     "build": "gulp build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --watch"
   },
   "keywords": [],
   "author": "",
@@ -23,14 +23,31 @@
     "xml2js": "^0.4.19"
   },
   "devDependencies": {
+    "@types/jest": "^22.2.2",
     "@types/koa-router": "^7.0.27",
     "@types/node": "^9.6.2",
     "gulp": "^4.0.0",
     "gulp-develop-server": "^0.5.2",
     "gulp-newer": "^1.4.0",
     "gulp-typescript": "^4.0.2",
+    "jest": "^22.4.3",
     "node-notifier": "^5.2.1",
     "shelljs": "^0.8.1",
+    "ts-jest": "^22.4.2",
     "typescript": "^2.8.1"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   }
 }
