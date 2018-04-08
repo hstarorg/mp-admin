@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { logger } from './logger';
 export type AccessTokenResult = {
   access_token: string;
   expires_in: number;
@@ -18,7 +19,7 @@ class MemoryTokenStore implements TokenStore {
     this.accessToken = { token: tokenResult.access_token, expires };
   }
   getToken(): string {
-    if (this.accessToken && this.accessToken.expires <= Date.now()) {
+    if (this.accessToken && this.accessToken.expires > Date.now()) {
       return this.accessToken.token;
     }
     return null;
@@ -63,6 +64,10 @@ export class AccessTokenManager {
   async _getWxAccessToken(): Promise<AccessTokenResult> {
     const { appID, appSecret, wxHost } = this.options;
     const { data } = await axios.get(`${wxHost}/token?grant_type=client_credential&appid=${appID}&secret=${appSecret}`);
+    // 出错了
+    if (data.hasOwnProperty('errcode')) {
+      logger.error(data, new Error(data));
+    }
     return data as AccessTokenResult;
   }
 }

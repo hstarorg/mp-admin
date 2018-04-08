@@ -4,7 +4,6 @@ import { cryptoHelper } from '../utils';
 export class WechatBiz {
   async processWechatCallback(ctx) {
     const { query } = ctx;
-    console.log(query);
     // 需要将微信Token, timestamp, nonce 转换为数组，进行字典序排序后，通过sha1计算得出签名
     const text = [config.wxToken, query.timestamp, query.nonce].sort().join('');
     const signature = cryptoHelper.sha1(text);

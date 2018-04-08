@@ -7,7 +7,8 @@
     "start": "npm run dev",
     "dev": "gulp dev",
     "build": "gulp build",
-    "test": "jest --watch"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "keywords": [],
   "author": "",
@@ -26,12 +27,14 @@
   "dependencies": {
     "axios": "^0.18.0",
     "fast-koa": "0.0.1",
+    "winston": "^2.4.1",
     "xml2js": "^0.4.19"
   },
   "devDependencies": {
     "@types/jest": "^22.2.2",
     "@types/koa-router": "^7.0.27",
     "@types/node": "^9.6.2",
+    "@types/winston": "^2.3.9",
     "gulp": "^4.0.0",
     "gulp-develop-server": "^0.5.2",
     "gulp-newer": "^1.4.0",
@@ -47,6 +50,7 @@
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
     },
+    "testEnvironment": "node",
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
     "moduleFileExtensions": [
       "ts",

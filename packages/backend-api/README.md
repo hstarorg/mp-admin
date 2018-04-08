@@ -1,11 +1,16 @@
 # 如何运行
 
 ```bash
+# Install deps
 npm i
 
+# Run dev
 npm start
 # or
 npm run dev
+
+# Run test
+npm test
 ```
 
 # 目录结构

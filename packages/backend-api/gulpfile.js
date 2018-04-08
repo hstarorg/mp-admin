@@ -53,7 +53,7 @@ gulp.task('restart', done => {
 });
 
 gulp.task('watch', done => {
-  gulp.watch(['src/**/*'], { delay: 1000 }, gulp.series('clean.routes', 'compile', 'restart'));
+  gulp.watch(['src/**/*.ts'], { delay: 1000 }, gulp.series('clean.routes', 'compile', 'restart'));
   done();
 });
 
