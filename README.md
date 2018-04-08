@@ -2,6 +2,14 @@
 
 微信公众平台管理端
 
+# Project Structure
+
+该项目分为两个子项目：一个是 [后端 api 子项目](packages/backend-pai)，另一个是 [管理 UI 项目](packages/frontend-web)。
+
+其中后端 API 项目采用如下技术栈：`Node.js + TypeScript + Gulp + fast-koa + Mysql`。
+
+前端子项目采用如下技术栈：`React + antd + redux + react-router v4`。
+
 # Target
 
 * [ ] 微信消息应答
@@ -10,10 +18,3 @@
 * [ ] 素材管理
 * [ ] 用户管理
 * [ ] 数据统计
-
-# Develop
-
-Backend: Node.js + TypeScript + fast-koa
-Frontend: React + antd
-DB: Mysql
-
