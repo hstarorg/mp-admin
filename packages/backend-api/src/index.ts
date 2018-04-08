@@ -1,8 +1,9 @@
-import * as path from 'path';
 import * as fastKoa from 'fast-koa';
+import * as path from 'path';
+
 import config from './config';
 
-fastKoa.initApp({ routesPath: config.routesPath });
+fastKoa.initApp({ routesPath: config.routesPath, enableLogger: true });
 
 fastKoa
   .listen(config.port)
