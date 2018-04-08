@@ -1,3 +1,5 @@
+import * as fse from 'fs-extra';
+
 import { AccessTokenManager } from './AccessTokenManager';
 import config from '../config';
 
@@ -11,6 +13,14 @@ export class Util {
    */
   async getAccessToken() {
     return await this.accessTokenManager.getAccessToken();
+  }
+
+  /**
+   * 确保目录存在（没有则创建，同步方法）
+   * @param path 要确保存在的目录
+   */
+  ensureDirSync(path: string) {
+    fse.ensureDirSync(path);
   }
 }
 
