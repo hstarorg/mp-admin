@@ -2,10 +2,10 @@ import * as Router from 'koa-router';
 import config from '../config';
 
 const router = new Router({
-  prefix: ``
+  prefix: `/account`
 });
 
-router.get('/test', async ctx => {
+router.get('/', async ctx => {
   ctx.body = 'ok';
 });
 
