@@ -1,4 +1,5 @@
 import * as Router from 'koa-router';
+import { accountBiz } from '../bizs';
 import config from '../config';
 
 const router = new Router({
