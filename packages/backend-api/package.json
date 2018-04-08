@@ -13,8 +13,14 @@
   "author": "",
   "license": "MIT",
   "importSort": {
-    ".js, .jsx, .es6, .es, .ts": {
+    ".js, .jsx, .es6, .es,": {
+      "parser": "babylon",
       "style": "module-compact"
+    },
+    ".ts, .tsx": {
+      "parser": "typescript",
+      "style": "eslint",
+      "options": {}
     }
   },
   "dependencies": {
@@ -34,7 +40,8 @@
     "node-notifier": "^5.2.1",
     "shelljs": "^0.8.1",
     "ts-jest": "^22.4.2",
-    "typescript": "^2.8.1"
+    "typescript": "^2.8.1",
+    "typescript-eslint-parser": "^14.0.0"
   },
   "jest": {
     "transform": {
