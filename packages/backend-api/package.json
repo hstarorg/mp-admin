@@ -1,0 +1,30 @@
+{
+  "name": "backend-api",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev":"gulp dev",
+    "build":"gulp build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "importSort": {
+    ".js, .jsx, .es6, .es, .ts": {
+      "style": "module-compact"
+    }
+  },
+  "dependencies": {
+    "fast-koa": "0.0.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-develop-server": "^0.5.2",
+    "gulp-newer": "^1.4.0",
+    "node-notifier": "^5.2.1",
+    "shelljs": "^0.8.1",
+    "typescript": "^2.8.1"
+  }
+}

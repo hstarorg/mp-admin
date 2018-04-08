@@ -13,5 +13,7 @@
 
 # Develop
 
-Backend: Node.js + TypeScript
-Frontend: 待定
+Backend: Node.js + TypeScript + fast-koa
+Frontend: React + antd
+DB: Mysql
+
