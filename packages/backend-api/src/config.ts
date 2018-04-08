@@ -1,6 +1,6 @@
 import * as path from 'path';
 
 export default {
-  port: 7777,
+  port: 9000,
   routesPath: path.join(__dirname, 'routes')
 };
