@@ -1,6 +1,6 @@
-const path = require('path');
+import * as path from 'path';
 
-module.exports = {
+export default {
   port: 7777,
   routesPath: path.join(__dirname, 'routes')
 };

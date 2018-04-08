@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"declaration": true,
+    "outDir": "dist",
+    "moduleResolution": "node",
+		"experimentalDecorators": true,
+    "target": "es2017",
+    "lib": [
+      "esnext"
+    ]
+	},
+  "exclude": [
+    "./node_modules"
+  ]
+}

@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev":"gulp dev",
-    "build":"gulp build",
+    "dev": "gulp dev",
+    "build": "gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -20,9 +20,12 @@
     "fast-koa": "0.0.1"
   },
   "devDependencies": {
+    "@types/koa-router": "^7.0.27",
+    "@types/node": "^9.6.2",
     "gulp": "^4.0.0",
     "gulp-develop-server": "^0.5.2",
     "gulp-newer": "^1.4.0",
+    "gulp-typescript": "^4.0.2",
     "node-notifier": "^5.2.1",
     "shelljs": "^0.8.1",
     "typescript": "^2.8.1"

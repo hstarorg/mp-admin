@@ -1,6 +1,6 @@
-const path = require('path');
-const fastKoa = require('fast-koa');
-const config = require('./config');
+import * as path from 'path';
+import * as fastKoa from 'fast-koa';
+import config from './config';
 
 fastKoa.initApp({ routesPath: config.routesPath });
 

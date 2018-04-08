@@ -1,8 +1,11 @@
 const shelljs = require('shelljs');
 const gulp = require('gulp');
+const typescript = require('gulp-typescript');
 const developServer = require('gulp-develop-server');
 const newer = require('gulp-newer');
 const notifier = require('node-notifier');
+
+const tsProject = typescript.createProject('tsconfig.json');
 
 const notify = message => {
   notifier.notify({
@@ -22,11 +25,15 @@ gulp.task('clean.routes', done => {
   done();
 });
 
+gulp.task('compile', () => {
+  return tsProject
+    .src()
+    .pipe(tsProject())
+    .js.pipe(gulp.dest(distFolder));
+});
+
 gulp.task('copy', () => {
-  return gulp
-    .src(['src/**/*', 'package.json'])
-    .pipe(newer(distFolder))
-    .pipe(gulp.dest(distFolder));
+  return gulp.src(['package.json']).pipe(gulp.dest(distFolder));
 });
 
 gulp.task('serve', done => {
@@ -46,11 +53,11 @@ gulp.task('restart', done => {
 });
 
 gulp.task('watch', done => {
-  gulp.watch(['src/**/*'], { debounceDelay: 2000 }, gulp.series('clean.routes', 'copy', 'restart'));
+  gulp.watch(['src/**/*'], { debounceDelay: 2000 }, gulp.series('clean.routes', 'compile', 'restart'));
   done();
 });
 
-gulp.task('dev', gulp.series('clean', 'copy', gulp.parallel('serve', 'watch')));
+gulp.task('dev', gulp.series('clean', 'compile', gulp.parallel('serve', 'watch')));
 
 gulp.task('installDeps', done => {
   shelljs.cd(distFolder);
@@ -58,4 +65,4 @@ gulp.task('installDeps', done => {
   done();
 });
 
-gulp.task('build', gulp.series('clean', 'copy', 'installDeps'));
+gulp.task('build', gulp.series('clean', 'copy', 'compile', 'installDeps'));
