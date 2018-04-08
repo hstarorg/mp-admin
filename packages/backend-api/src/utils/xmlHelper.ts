@@ -39,7 +39,7 @@ const parseAsync = (xml, options?, callback?) => {
  * @param obj 要转换的对象
  * @param [options] 转换时的参数对象
  */
-const stringify = (obj, options?) => {
+const stringify = (obj, options?: { cdata?: boolean; rootName?: string }) => {
   let builder;
   if (options && typeof options === 'object') {
     builder = new xml2js.Builder(options);

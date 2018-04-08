@@ -1,4 +1,5 @@
+import { bindSelf } from './bindSelf';
 import { cryptoHelper } from './cryptoHelper';
 import { xmlHelper } from './xmlHelper';
 
-export { cryptoHelper, xmlHelper };
+export { bindSelf, cryptoHelper, xmlHelper };

@@ -5,7 +5,7 @@
     "outDir": "dist",
     "moduleResolution": "node",
 		"experimentalDecorators": true,
-    "target": "es2017",
+    "target": "es2018",
     "lib": [
       "esnext"
     ]
