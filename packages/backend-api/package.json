@@ -23,6 +23,7 @@
   "devDependencies": {
     "@types/koa-router": "^7.0.27",
     "@types/node": "^9.6.2",
+    "crypto": "^1.0.1",
     "gulp": "^4.0.0",
     "gulp-develop-server": "^0.5.2",
     "gulp-newer": "^1.4.0",
