@@ -26,8 +26,8 @@ gulp.task('clean.routes', done => {
 });
 
 gulp.task('compile', () => {
-  return tsProject
-    .src()
+  return gulp
+    .src('src/**/*.ts')
     .pipe(tsProject())
     .js.pipe(gulp.dest(distFolder));
 });
@@ -53,7 +53,7 @@ gulp.task('restart', done => {
 });
 
 gulp.task('watch', done => {
-  gulp.watch(['src/**/*'], { debounceDelay: 2000 }, gulp.series('clean.routes', 'compile', 'restart'));
+  gulp.watch(['src/**/*.ts'], { delay: 1000 }, gulp.series('clean.routes', 'compile', 'restart'));
   done();
 });
 

@@ -1,0 +1,4 @@
+export default {
+  wxAppID: '<your wechat app id>',
+  wxAppSecret: '<your wechat app secret>'
+};

@@ -1,6 +1,5 @@
 import * as Router from 'koa-router';
-const crypto = require('crypto');
-
+import { accountBiz } from '../bizs';
 import config from '../config';
 
 const router = new Router({

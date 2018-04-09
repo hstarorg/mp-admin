@@ -7,31 +7,61 @@
     "start": "npm run dev",
     "dev": "gulp dev",
     "build": "gulp build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "importSort": {
-    ".js, .jsx, .es6, .es, .ts": {
+    ".js, .jsx, .es6, .es,": {
+      "parser": "babylon",
       "style": "module-compact"
+    },
+    ".ts, .tsx": {
+      "parser": "typescript",
+      "style": "eslint",
+      "options": {}
     }
   },
   "dependencies": {
     "axios": "^0.18.0",
     "fast-koa": "0.0.1",
+    "fs-extra": "^5.0.0",
+    "raw-body": "^2.3.2",
+    "winston": "^2.4.1",
     "xml2js": "^0.4.19"
   },
   "devDependencies": {
+    "@types/fs-extra": "^5.0.1",
+    "@types/jest": "^22.2.2",
     "@types/koa-router": "^7.0.27",
     "@types/node": "^9.6.2",
-    "crypto": "^1.0.1",
+    "@types/winston": "^2.3.9",
     "gulp": "^4.0.0",
     "gulp-develop-server": "^0.5.2",
     "gulp-newer": "^1.4.0",
     "gulp-typescript": "^4.0.2",
+    "jest": "^22.4.3",
     "node-notifier": "^5.2.1",
     "shelljs": "^0.8.1",
-    "typescript": "^2.8.1"
+    "ts-jest": "^22.4.2",
+    "typescript": "^2.8.1",
+    "typescript-eslint-parser": "^14.0.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testEnvironment": "node",
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   }
 }
