@@ -12,16 +12,26 @@ export interface WxTextMessage {
 }
 
 export class WxMessageBuilder {
-  constructor() {}
+  /**
+   * 初始化微信消息构造器
+   * @param fromWxId 开发者微信ID
+   */
+  constructor(private fromWxId: string) {}
+
   _buildMessage(msgType: WxMsgType, toOpenId: string, extraInfo: any) {
     const baseInfo = {
       ToUserName: toOpenId,
-      FromUserName: '',
+      FromUserName: this.fromWxId,
       CreateTime: Math.floor(Date.now() / 1000),
       MsgType: msgType
     };
   }
 
+  /**
+   * 构建文本信息
+   * @param toOpenId 要回复的用户OpenId
+   * @param extraInfo 文本消息扩展信息
+   */
   buildTextMessage(toOpenId, extraInfo: WxTextMessage) {
     return this._buildMessage(WxMsgType.text, toOpenId, extraInfo);
   }
