@@ -1,11 +1,4 @@
-export enum WxMsgType {
-  text,
-  image,
-  voice,
-  video,
-  music,
-  news
-}
+import { WxMsgType } from './WxMsgType';
 
 export interface WxTextMessage {
   Content: string;
