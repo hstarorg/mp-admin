@@ -40,6 +40,12 @@ export class WechatBiz {
     const resBodyStr = xmlHelper.stringify(resBody);
     ctx.body = resBodyStr;
   }
+
+  @bindSelf
+  async redirectToApp(ctx: koa.Context) {
+    const { query, params } = ctx;
+    const appId = params.appName;
+  }
 }
 
 export const wechatBiz = new WechatBiz();
