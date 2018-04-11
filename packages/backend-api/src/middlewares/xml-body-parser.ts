@@ -31,6 +31,9 @@ export function xmlBodyParser(options?) {
       return (raw(ctx.req, rawOptions) as any)
         .then(async str => {
           const xmlObj = await xmlHelper.parseAsync(str);
+          if (process.env.NODE_ENV === 'development') {
+            console.log(xmlObj);
+          }
           ctx.request.body = xmlObj;
           next();
         })

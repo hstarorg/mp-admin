@@ -1,5 +1,5 @@
 {
-  "devDependencies": {
-    "crypto": "^1.0.1"
+  "scripts": {
+    "backend": "cd packages/backend-api && npm run dev "
   }
 }
