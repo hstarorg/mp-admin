@@ -28,10 +28,17 @@ export class WechatBiz {
 
   @bindSelf
   async processWechatMessage(ctx: koa.Context) {
-    // 处理消息
-    const MsgType = ctx.body.xml.MsgType;
-    this.msgTypeCb(MsgType);
-    // 返回消息
+    const { query, params } = ctx;
+    const { body } = ctx.request as any;
+    const resBody = {
+      ToUserName: query.openid,
+      FromUserName: body.xml.ToUserName,
+      CreateTime: Math.floor(Date.now() / 1000),
+      MsgType: 'text',
+      Content: 'hello'
+    };
+    const resBodyStr = xmlHelper.stringify(resBody);
+    ctx.body = resBodyStr;
   }
 
   msgTypeCb(type) {}
