@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "backend": "cd packages/backend-api && npm run dev "
+  }
+}
