@@ -12,7 +12,10 @@ export const commonConfig = {
       name: '系统设置',
       key: 'setting',
       icon: 'tool',
-      children: [{ name: '没想好', key: 'setting-unknown', path: '/setting-unknown' }]
+      children: [
+        { name: '微信网页授权', key: 'web-apps', path: '/web-apps', icon: 'appstore-o' },
+        { name: '没想好', key: 'setting-unknown', path: '/setting-unknown' }
+      ]
     }
   ]
 };
