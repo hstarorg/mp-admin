@@ -52,7 +52,7 @@ export class WxMessageBuilder {
       MsgType: msgType
     };
 
-    return xmlHelper.stringify({ ...baseInfo, ...extraInfo });
+    return xmlHelper.stringify({ ...extraInfo, ...baseInfo });
   }
 
   /**
