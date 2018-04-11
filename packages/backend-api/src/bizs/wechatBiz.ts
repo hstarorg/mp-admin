@@ -40,8 +40,6 @@ export class WechatBiz {
     const resBodyStr = xmlHelper.stringify(resBody);
     ctx.body = resBodyStr;
   }
-
-  msgTypeCb(type) {}
 }
 
 export const wechatBiz = new WechatBiz();
