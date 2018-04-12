@@ -15,5 +15,6 @@ export class RootStore {
   @action
   toggle() {
     this.isLogged = !this.isLogged;
+    this.userInfo.username = Math.random();
   }
 }
