@@ -1,10 +1,15 @@
 import './less/all.less';
 
+import { configure, observable } from 'mobx';
 import { Provider } from 'mobx-react';
 import React, { Component } from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import { routes } from './routes';
 import { store } from './store';
+
+configure({
+  enforceActions: true
+});
 
 class App extends Component {
   render() {

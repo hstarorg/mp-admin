@@ -1,7 +1,17 @@
-import React, { PureComponent } from 'react';
+import { inject, observer } from 'mobx-react';
+import React, { Component } from 'react';
 
-export class HomePage extends PureComponent {
+@inject('store')
+@observer
+export class HomePage extends Component {
+  componentWillMount() {}
   render() {
-    return <div>Home</div>;
+    console.log('render');
+    return (
+      <div>
+        Home- {String(this.props.store.isLogged)}
+        <button onClick={() => this.props.store.toggle()}>SET</button>
+      </div>
+    );
   }
 }
